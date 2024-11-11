@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ShoppingCart, ArrowRight } from 'lucide-react'
-import ReactTypingEffect from 'react-typing-effect';
+import ReactTypingEffect from 'react-typing-effect'
+import Navbar from './Components/Navbar/Navbar' // Adjust the import path as needed
 
 export default function CrockeryLandingPage() {
   const [email, setEmail] = useState('')
@@ -38,25 +39,7 @@ export default function CrockeryLandingPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <header className="container mx-auto px-4 py-8">
-        <nav className="flex justify-between items-center">
-          <motion.h1 
-            className="text-3xl font-bold"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Sahni Crockeries
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <CustomButton>
-              <ShoppingCart className="mr-2 h-4 w-4" /> Cart (0)
-            </CustomButton>
-          </motion.div>
-        </nav>
+        <Navbar /> {/* Use the Navbar component here */}
       </header>
 
       <main className="container mx-auto px-4">
@@ -154,4 +137,3 @@ export default function CrockeryLandingPage() {
     </div>
   )
 }
-
